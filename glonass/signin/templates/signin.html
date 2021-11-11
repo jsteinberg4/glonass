@@ -1,0 +1,16 @@
+{% load static %}
+
+<body>
+<p style="color: red; font-size: 24">{{errormsg}}</p>
+<form action="/signin/" method="post">
+    {% csrf_token %}
+    <label>Username: </label>
+    <input name="uname" type="text" maxlength="50" required/>
+    <br>
+    <label>Password: </label>
+    <input name="password" type="password" maxlength="50" required/>
+    <br>
+    <button type="button" onclick="window.location.href='/signin/createaccount/'">Create Account</button>
+    <input type="submit" value="Sign In"/> 
+</form>
+</body>
