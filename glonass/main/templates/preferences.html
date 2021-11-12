@@ -1,0 +1,49 @@
+{% load static %}
+
+<body>
+<p style="color: red; font-size: 24">{{errormsg}}</p>
+<p>{{data.galaxies}}</p>
+<form action="/preferences/" method="post">
+    {% csrf_token %}
+    <p>Username: {{user.username}}</p>
+    <label for="galaxies">Show galaxies: </label>
+    <select name="galaxies" id="galaxies">
+    <option value="True" {{data.galaxies|yesno:"selected,"}}>True</option>
+    <option value="False" {{data.galaxies|yesno:",selected"}}>False</option>
+    </select>
+
+    <br>
+
+    <label for="stars">Show stars: </label>
+    <select name="stars" id="stars">
+    <option value="True" {{data.stars|yesno:"selected,"}}>True</option>
+    <option value="False" {{data.stars|yesno:",selected"}}>False</option>
+    </select>
+
+    <br>
+
+    <label for="planets">Show planets: </label>
+    <select name="planets" id="planets">
+    <option value="True" {{data.planets|yesno:"selected,"}}>True</option>
+    <option value="False" {{data.planets|yesno:",selected"}}>False</option>
+    </select>
+
+    <br>
+
+    <label for="blackHoles">Show black holes: </label>
+    <select name="blackHoles" id="blackHoles">
+    <option value="True" {{data.blackHoles|yesno:"selected,"}}>True</option>
+    <option value="False" {{data.blackHoles|yesno:",selected"}}>False</option>
+    </select>
+
+    <br>
+
+    <label for="moons">Show moons: </label>
+    <select name="moons" id="moons">
+    <option value="True" {{data.moons|yesno:"selected,"}}>True</option>
+    <option value="False" {{data.moons|yesno:",selected"}}>False</option>
+    </select>
+    <br>
+    <input type="submit" value="Save Preferences"/> 
+</form>
+</body>
