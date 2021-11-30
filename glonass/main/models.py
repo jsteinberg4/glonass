@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib import admin
 
 # Create your models here.
 
@@ -12,3 +13,6 @@ class Preferences(models.Model):
     planets = models.BooleanField(default=True)
     blackHoles = models.BooleanField(default=True)
     moons = models.BooleanField(default=True)
+
+
+admin.site.register(Preferences)
