@@ -1,5 +1,9 @@
 # Mac DS_Store files
 .DS_Store
+
+# IDE Configs
+.idea/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
