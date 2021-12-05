@@ -1,0 +1,35 @@
+Catalog ( Catalog_Name ) 						- Catalogue (H=Hipparcos) 
+HIP ( HIP_Number ) 								- Identifier (HIP number) 
+Vmag ( Vmag ) 									- Magnitude in Johnson V 
+r_Vmag ( Vmag_Source ) 							- Source of magnitude 
+RAdeg ( RA_Deg ) 								- RA in degrees (ICRS, Epoch-J1991.25) 
+DEdeg ( Dec_Deg ) 								- Dec in degrees (ICRS, Epoch-J1991.25) 
+Plx ( Parallax ) 								- Trigonometric parallax 
+pmRA ( pm_RA ) 									- Proper motion in RA 
+pmDE ( pm_Dec ) 								- Proper motion in Dec 
+e_RAdeg ( RA_Error ) 							- Standard error in RA*cos(Dec_Deg) 
+e_DEdeg ( Dec_Error ) 							- Standard error in Dec_Deg 
+e_Plx ( Parallax_Error ) 						- Standard error in Parallax 
+F1 ( Reject_Percent ) 							- Percentage of rejected data 
+F2 ( Quality_Fit ) 								- Goodness-of-fit parameter 
+Hpmag ( Hip_Mag ) 								- Median magnitude in Hipparcos system 
+e_Hpmag ( Hip_Mag_Error ) 						- Standard error on Hpmag 
+Hpscat ( Scat_Hip_Mag ) 						- Scatter of Hpmag 
+o_Hpmag ( N_Obs_Hip_Mag ) 						- Number of observations for Hpmag 
+m_Hpmag ( Hip_Mag_Ref_Dbl ) 					- Reference flag for Hpmag 
+Hpmax ( Hip_Mag_Max ) 							- Hpmag at maximum (5th percentile) 
+HPmin ( Hip_Mag_Min ) 							- Hpmag at minimum (95th percentile) 
+Period ( Var_Period ) 							- Variability period (days) 
+HvarType ( Hip_Var_Type ) 						- Variability type 
+Ncomp ( CCDM_N_Comp ) 							- Number of components in this entry 
+MultFlag ( Dbl_Mult_Annex ) 					- Double and or Multiple Systems flag 
+Source ( Astrom_Mult_Source ) 					- Astrometric source flag 
+m_HIP ( Dbl_Ref_ID ) 							- Component identifiers 
+theta ( Dbl_Theta ) 							- Position angle between components 
+rho ( Dbl_Rho ) 								- Angular separation of components 
+e_rho ( Rho_Error ) 							- Standard error of rho 
+dHp ( Diff_Hip_Mag ) 							- Magnitude difference of components 
+e_dHp ( dHip_Mag_Error ) 						- Standard error in dHp 
+Survey ( Survey_Star ) 							- Flag indicating a Survey Star 
+SpType ( Spect_Type ) 							- Spectral type 
+r_SpType ( Spect_Type_Source ) 					- Source of spectral type 
