@@ -32,4 +32,43 @@ dHp ( Diff_Hip_Mag ) 							- Magnitude difference of components
 e_dHp ( dHip_Mag_Error ) 						- Standard error in dHp 
 Survey ( Survey_Star ) 							- Flag indicating a Survey Star 
 SpType ( Spect_Type ) 							- Spectral type 
-r_SpType ( Spect_Type_Source ) 					- Source of spectral type 
+r_SpType ( Spect_Type_Source ) 					- Source of spectral type
+
+COL GROUPS:
+1 -> Star catalog:
+	Catalog
+	HIP
+	Survey
+
+2 -> Star position:
+	RAdeg
+	DEdeg
+	Plx
+	pmRA
+	pmDE
+	e_RAdeg
+	e_DEdeg
+	e_plx
+	F1
+	F2
+
+3 -> Star system:
+	Ncomp
+	MultFlag
+	m_HIP
+	theta
+	rho
+	e_rho
+
+4 -> Star characteristics:
+	Vmag
+	Hpmag
+	e_Hpmag
+	Hpscat
+	0_Hpmag
+	m_Hpmag
+	Hpmax
+	Hpmin
+	Period
+	HvarType
+	Source
