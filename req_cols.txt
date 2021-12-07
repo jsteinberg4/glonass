@@ -65,10 +65,10 @@ COL GROUPS:
 	Hpmag
 	e_Hpmag
 	Hpscat
-	0_Hpmag
+	o_Hpmag
 	m_Hpmag
 	Hpmax
-	Hpmin
+	HPmin
 	Period
 	HvarType
 	Source
