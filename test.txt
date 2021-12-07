@@ -1,0 +1,11 @@
+Vmag
+Hpmag
+e_Hpmag
+Hpscat
+0_Hpmag
+m_Hpmag
+Hpmax
+Hpmin
+Period
+HvarType
+Source
