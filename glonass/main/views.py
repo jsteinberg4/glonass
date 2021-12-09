@@ -22,3 +22,8 @@ def preferences(request):
         data.save()
 
     return render(request, "preferences.html", {"user": request.user, "data": data})
+
+
+@login_required
+def app(request):
+    return render(request, "app.html", {"user": request.user})
