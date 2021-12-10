@@ -23,7 +23,10 @@ def preferences(request):
 
     return render(request, "preferences.html", {"user": request.user, "data": data})
 
-
 @login_required
 def app(request):
     return render(request, "app.html", {"user": request.user})
+
+@login_required
+def locations(request):
+    return render(request, "locations.html", {"user": request.user})
