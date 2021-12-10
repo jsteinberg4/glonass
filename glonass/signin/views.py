@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-
+from django.shortcuts import redirect
 
 def signin(request):
     print(request.POST)
@@ -14,7 +14,7 @@ def signin(request):
             username=request.POST['uname'], password=request.POST['password'])
         if user is not None:
             login(request, user)
-            return HttpResponse("Success")
+            return redirect('/')
         else:
             return render(request, "signin.html", {"errormsg": "Incorrect username or password"})
     return render(request, "signin.html")
@@ -31,5 +31,5 @@ def createAccount(request):
         user = authenticate(username=username, password=password)
         if user is not None:  # prob not needed
             login(request, user)
-            return HttpResponse("Success")
+            return redirect('/')
     return render(request, "create.html")
