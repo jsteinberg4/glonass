@@ -20,5 +20,5 @@ from . import views
 urlpatterns = [
     path('', views.app, name='app'),
     path('locations', views.locations, name='locations'),
-    path('preferences/', views.preferences, name='preferences'),
+    path('settings', views.preferences, name='preferences')
 ]
