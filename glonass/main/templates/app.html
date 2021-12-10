@@ -45,6 +45,54 @@
 		</div>
 	</div>
 
+	<div id="data">
+		{% if data %}
+		<hr>
+		<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto">
+			<tr>
+				<th>HIP</th>
+				<th>Catalog</th>
+				<th>Survey</th>
+				<th>Vmag</th>
+				<th>Hpmag</th>
+				<th>e_Hpmag</th>
+				<th>Hpscat</th>
+				<th>o_Hpmag</th>
+				<th>m_Hpmag</th>
+				<th>Hpmax</th>
+				<th>HPmin</th>
+				<th>Period</th>
+				<th>HvarType</th>
+				<th>Source</th>
+				<th>RAdeg</th>
+				<th>DEdeg</th>
+				<th>Plx</th>
+				<th>pmRA</th>
+				<th>pmDE</th>
+				<th>e_RAdeg</th>
+				<th>e_DEdeg</th>
+				<th>e_Plx</th>
+				<th>F1</th>
+				<th>F2</th>
+				<th>Ncomp</th>
+				<th>MultFlag</th>
+				<th>m_HIP</th>
+				<th>theta</th>
+				<th>rho</th>
+				<th>e_rho</th>
+			</tr>
+			{% for r in data %}
+			<tr>
+				{% for v in r %}
+				<td>{{v}}</td>
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		</table>
+		{% endif %}
+
+	</div>
+
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

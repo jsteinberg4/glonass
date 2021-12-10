@@ -19,6 +19,7 @@ from . import views
 
 urlpatterns = [
     path('', views.app, name='app'),
+    path('delete', views.delete, name='delete'),
     path('locations', views.locations, name='locations'),
     path('settings', views.preferences, name='preferences')
 ]

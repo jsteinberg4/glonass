@@ -6,6 +6,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .models import Preferences
 from django.db import connection
+from django.contrib.auth import logout
 
 
 @login_required
@@ -34,22 +35,44 @@ def preferences(request):
 def app(request):
     pref = Preferences.objects.get(user=request.user)
     data = []
+        
     with connection.cursor() as cur:
-        cur.callproc('get_survey_stars', []) if pref.survey_star else None
-        data.append(cur.fetchall())
-        cur.callproc('get_high_mag_stars', []) if pref.high_magnitude else None
-        data.append(cur.fetchall())
-        cur.callproc('get_high_var_stars', []
-                     ) if pref.high_variability else None
-        data.append(cur.fetchall())
-        cur.callproc('get_low_var_stars', []) if pref.low_variability else None
-        data.append(cur.fetchall())
-        cur.callproc('get_multi_stars', []) if pref.multi_star_system else None
-        data.append(cur.fetchall())
-    print(data)
+        if pref.survey_star:
+            cur.callproc('get_survey_stars', [])
+            for x in cur.fetchall():
+                data.append(x) if x not in data else None
+
+        if pref.high_magnitude:
+            cur.callproc('get_high_mag_stars', [])
+            for x in cur.fetchall():
+                data.append(x) if x not in data else None
+
+        if pref.high_variability:
+            cur.callproc('get_high_var_stars', [])
+            for x in cur.fetchall():
+                data.append(x) if x not in data else None
+
+        if pref.low_variability:
+            cur.callproc('get_low_var_stars', [])
+            for x in cur.fetchall():
+                data.append(x) if x not in data else None
+
+        if pref.multi_star_system:
+            cur.callproc('get_multi_stars', [])
+            for x in cur.fetchall():
+                data.append(x) if x not in data else None
+
+        print(data)
 
     return render(request, "app.html", {"user": request.user, "data": data})
 
+@login_required
+def delete(request):
+    u = User.objects.get(user=request.POST.user)
+    logout(u)
+    u.delete()
+
+    return redirect('/')
 
 @login_required
 def locations(request):
